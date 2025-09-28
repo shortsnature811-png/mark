@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <style>
+    body {
+      font-family:'Segoe UI', sans-serif;
+      margin:0;
+      background:linear-gradient(135deg,#87ceeb,#1e90ff); /* sky blue gradient */
+      color:#333; /* default text dark so visible */
+      text-align:center;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+    h1 { margin:30px 0; color:#073b4c; }
+    table {
+      border-collapse:collapse;
+      width:85%;
+      background:#fff; /* white table background */
+      border-radius:12px;
+      overflow:hidden;
+      box-shadow:0 8px 25px rgba(0,0,0,0.3);
+      color:#000; /* black text for clarity */
+    }
+    th, td { padding:12px; }
+    th {
+      background:#0077b6;
+      color:#fff;
+    }
+    tr:nth-child(even) { background:#f0f8ff; }
+    button {
+      margin:20px;
+      padding:12px 24px;
+      background:#ef476f;
+      border:none;
+      border-radius:8px;
+      color:white;
+      font-size:16px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+    button:hover { background:#d43d60; }
+    footer { margin-top:auto; padding:15px; font-size:13px; color:#073b4c; }
+  </style>
+</head>
+<body>
+  <h1>📊 Group Members Marks</h1>
+
+  <table>
+    <tr>
+      <th>name</th>
+      <th>physics</th>
+      <th>chemistry</th>
+      <th>maths/bio</th>
+      <th>hindi/it-cs</th>
+      <th>english</th>
+    </tr>
+    <tr><td>ritik_bhagoliya</td><td>25</td><td>29</td><td>?</td><td>?</td><td>?</td></tr>
+    <tr><td>tanish_baura</td><td>28</td><td>29</td><td>?</td><td>?</td><td>?</td></tr>
+    <tr><td>vaidik_solanki</td><td>39</td><td>38</td><td>?</td><td>61</td><td>?</td></tr>
+    <tr><td>akshat_johsi</td><td>40</td><td>29</td><td>?</td><td>?</td><td>?</td></tr>
+    <tr><td>priyansh_bangar</td><td>30</td><td>20</td><td>?</td><td>?</td><td>?</td></tr>
+  </table>
+
+  <button onclick="logout()">Logout</button>
+  <footer>Coded by Ritik 💻</footer>
+
+ 
+<script>
+  function logout(){
+    // User ko localStorage se hata do
+    localStorage.removeItem("user");
+    
+    // Safety: direct welcome.html pe bhi remove kar de
+    sessionStorage.clear();  
+
+    // Wapas login page pe bhej do
+    window.location.replace("login.html");  
+  }
+</script>
